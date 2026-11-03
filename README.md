@@ -1,7 +1,7 @@
 # Note app
 
 
-> [!NOTE]
+> [!TIP]
 > **Getting started**
 > 
 > ```sh
@@ -10,3 +10,9 @@
 > pnpm i # install dependencies
 > pnpm dev # start the services
 > ```
+
+> [!NOTE]
+> **Requirements**
+>
+> - Node.js 26 or newer
+> - pnpm 9 or newer
