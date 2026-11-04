@@ -8,7 +8,7 @@
 > git clone https://github.com/big-ballsack/note-app # clone the project
 > cd note-app # move into it
 > bun install # install dependencies
-> bun dev # start the services
+> bun dev # start the services (Turborepo TUI)
 > ```
 
 > [!NOTE]
@@ -33,6 +33,7 @@
 > │           └── App.tsx     # root component
 > ├── shared/                 # shared workspace packages (empty for now)
 > ├── package.json            # root scripts + workspaces (services/*, shared/*)
+> ├── turbo.json              # Turborepo task pipeline (TUI mode)
 > ├── bun.lock                # Bun lockfile
 > └── tsconfig.base.json      # shared TypeScript config
 > ```
