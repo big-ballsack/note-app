@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "bun --bun prisma generate",
-    "db:migrate": "bun --bun prisma migrate dev",
+    "generate": "bun --bun --env-file=.env prisma generate",
+    "db:migrate": "bun --bun --env-file=.env prisma migrate dev",
     "dev": "bun --watch src/index.ts",
     "build": "bun build src/index.ts --target bun --outdir dist",
     "start": "bun dist/index.js",
@@ -13,7 +13,9 @@
   "dependencies": {
     "@prisma/adapter-pg": "7.10.1",
     "@prisma/client": "7.10.1",
-    "hono": "^4.13.16"
+    "@t3-oss/env-core": "^0.13.11",
+    "hono": "^4.13.16",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/bun": "^1.4.4",

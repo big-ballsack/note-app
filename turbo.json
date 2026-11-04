@@ -17,6 +17,13 @@
       ],
       "outputs": [
         "dist/**"
+      ],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env*"
+      ],
+      "env": [
+        "VITE_*"
       ]
     },
     "typecheck": {
@@ -30,6 +37,10 @@
       "persistent": true,
       "dependsOn": [
         "generate"
+      ],
+      "passThroughEnv": [
+        "DATABASE_URL",
+        "PORT"
       ]
     }
   }
