@@ -2,11 +2,16 @@
   "name": "note-application",
   "private": true,
   "type": "module",
+  "packageManager": "bun@1.4.4",
   "scripts": {
-    "dev": "pnpm -r --parallel dev",
-    "build": "pnpm -r build",
-    "typecheck": "pnpm -r typecheck"
+    "dev": "bun --filter '*' dev",
+    "build": "bun --filter '*' build",
+    "typecheck": "bun --filter '*' typecheck"
   },
+  "workspaces": [
+    "services/*",
+    "shared/*"
+  ],
   "devDependencies": {
     "typescript": "^7.0.2"
   }

@@ -3,17 +3,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "build": "tsc --noEmit false --outDir dist",
-    "start": "node dist/index.js",
+    "dev": "bun --watch src/index.ts",
+    "build": "bun build src/index.ts --target bun --outdir dist",
+    "start": "bun dist/index.js",
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@hono/node-server": "^2.1.6",
     "hono": "^4.13.16"
   },
   "devDependencies": {
-    "@types/node": "^26.6.6",
-    "tsx": "^4.23.15"
+    "@types/bun": "^1.4.4"
   }
 }

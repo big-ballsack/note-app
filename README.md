@@ -7,15 +7,14 @@
 > ```sh
 > git clone https://github.com/big-ballsack/note-app # clone the project
 > cd note-app # move into it
-> pnpm i # install dependencies
-> pnpm dev # start the services
+> bun install # install dependencies
+> bun dev # start the services
 > ```
 
 > [!NOTE]
 > **Requirements**
 >
-> - Node.js 26 or newer
-> - pnpm 9 or newer
+> - Bun 1.4 or newer
 
 > [!NOTE]
 > **Project structure**
@@ -23,7 +22,7 @@
 > ```sh
 > .
 > ├── services/
-> │   ├── backend/            # Hono API server
+> │   ├── backend/            # Hono API server (Bun.serve)
 > │   │   └── src/
 > │   │       └── index.ts    # server entry point
 > │   └── frontend/           # React app built with Vite
@@ -33,7 +32,7 @@
 > │           ├── main.tsx    # React entry point
 > │           └── App.tsx     # root component
 > ├── shared/                 # shared workspace packages (empty for now)
-> ├── package.json            # root scripts: dev, build, typecheck
-> ├── pnpm-workspace.yaml     # workspace config (services/*, shared/*)
+> ├── package.json            # root scripts + workspaces (services/*, shared/*)
+> ├── bun.lock                # Bun lockfile
 > └── tsconfig.base.json      # shared TypeScript config
 > ```

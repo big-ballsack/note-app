@@ -1,12 +1,12 @@
-import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 
 const app = new Hono();
 
 app.get("/api/health", (c) => c.json({ status: "ok" }));
 
-const port = Number(process.env.PORT ?? 3000);
-
-serve({ fetch: app.fetch, port }, (info) => {
-  console.log(`Backend listening on http://localhost:${info.port}`);
+const server = Bun.serve({
+  fetch: app.fetch,
+  port: Number(process.env.PORT ?? 3000),
 });
+
+console.log(`Backend listening on ${server.url}`);
