@@ -39,6 +39,9 @@ services:
     environment:
       DATABASE_URL: *database-url
       PORT: 3000
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET:?BETTER_AUTH_SECRET is required}
+      # Public origin users visit; must match it for auth cookies and CSRF checks
+      BETTER_AUTH_URL: ${BETTER_AUTH_URL:-http://localhost:8080}
     depends_on:
       migrate:
         condition: service_completed_successfully

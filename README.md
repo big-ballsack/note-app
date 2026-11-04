@@ -9,7 +9,7 @@
 > cd note-app # move into it
 > bun install # install dependencies
 > cp services/backend/.env.example services/backend/.env # local env
-> docker compose -f compose.dev.yaml up -d # start the local database
+> bun db:up # start the local database (bun db:down to stop it)
 > bun dev # start the services (Turborepo TUI)
 > ```
 
@@ -23,10 +23,10 @@
 > **Deployment**
 >
 > ```sh
-> POSTGRES_PASSWORD=... docker compose up -d --build # db, migrations, backend, frontend on :8080
+> POSTGRES_PASSWORD=... BETTER_AUTH_SECRET=... docker compose up -d --build # db, migrations, backend, frontend on :8080
 > ```
 >
-> Optional: `POSTGRES_USER`, `POSTGRES_DB`, `FRONTEND_PORT`. The password ends up in a URL, so URL-encode special characters.
+> Optional: `POSTGRES_USER`, `POSTGRES_DB`, `FRONTEND_PORT`, `BETTER_AUTH_URL` (public origin, default `http://localhost:8080`). The password ends up in a URL, so URL-encode special characters.
 
 > [!NOTE]
 > **Project structure**

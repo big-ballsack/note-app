@@ -7,12 +7,20 @@
     "dev": "turbo run dev",
     "build": "turbo run build",
     "typecheck": "turbo run typecheck",
-    "check": "biome check --write"
+    "check": "biome check --write",
+    "db:up": "docker compose -f compose.dev.yaml up -d --wait",
+    "db:down": "docker compose -f compose.dev.yaml down",
+    "db:migrate": "bun run --cwd services/backend db:migrate"
   },
-  "workspaces": [
-    "services/*",
-    "shared/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "services/*",
+      "shared/*"
+    ],
+    "catalog": {
+      "better-auth": "1.7.17"
+    }
+  },
   "devDependencies": {
     "@biomejs/biome": "2.6.5",
     "turbo": "^2.11.10"
