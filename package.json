@@ -9,6 +9,7 @@
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
     "test:unit": "bun run --cwd services/backend test",
+    "test:integration": "bun run --cwd services/backend test:integration",
     "check": "biome check --write",
     "db:up": "docker compose -f compose.dev.yaml up -d --wait",
     "db:down": "docker compose -f compose.dev.yaml down",

@@ -12,7 +12,8 @@
     "build": "bun build src/index.ts --target bun --outdir dist",
     "start": "bun dist/index.js",
     "typecheck": "tsc",
-    "test": "bun test test/unit"
+    "test": "bun test test/unit",
+    "test:integration": "bun --bun --env-file=.env.test prisma migrate reset --force && bun test test/integration"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.9.1",

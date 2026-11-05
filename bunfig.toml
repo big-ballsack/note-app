@@ -1,0 +1,4 @@
+[test]
+# Integration tests need their service's .env and .env.test, which only load when bun test runs inside that service:
+# run them with `bun run test:integration` (or `bun test` from services/backend)
+pathIgnorePatterns = ["**/test/integration/**"]
