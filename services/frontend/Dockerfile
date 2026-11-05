@@ -8,6 +8,8 @@ COPY shared/types/package.json shared/types/
 RUN bun install --frozen-lockfile --filter @note-application/frontend
 COPY tsconfig.base.json ./
 COPY shared/types shared/types
+COPY services/backend services/backend
+RUN cd services/backend && DATABASE_URL=postgres://build:build@localhost:5432/build bun run generate
 COPY services/frontend services/frontend
 WORKDIR /app/services/frontend
 RUN bun run build

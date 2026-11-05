@@ -6,3 +6,5 @@ export const app = new Hono() //
   .basePath("/api")
   .on(["GET", "POST"], "/auth/*", (c) => auth.handler(c.req.raw))
   .route("/notes", notesModule());
+
+export type AppType = typeof app;

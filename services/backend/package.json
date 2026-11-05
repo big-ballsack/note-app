@@ -2,6 +2,9 @@
   "name": "@note-application/backend",
   "private": true,
   "type": "module",
+  "exports": {
+    "./app": "./src/app.ts"
+  },
   "scripts": {
     "generate": "bun --bun --env-file=.env prisma generate",
     "db:migrate": "bun --bun --env-file=.env prisma migrate dev",
