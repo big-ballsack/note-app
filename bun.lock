@@ -12,6 +12,7 @@
     "services/backend": {
       "name": "@note-application/backend",
       "dependencies": {
+        "@note-application/types": "workspace:*",
         "@prisma/adapter-pg": "7.10.1",
         "@prisma/client": "7.10.1",
         "@t3-oss/env-core": "^0.13.11",
@@ -28,6 +29,7 @@
     "services/frontend": {
       "name": "@note-application/frontend",
       "dependencies": {
+        "@note-application/types": "workspace:*",
         "@t3-oss/env-core": "^0.13.11",
         "better-auth": "catalog:",
         "react": "^19.3.1",
@@ -40,6 +42,15 @@
         "@vitejs/plugin-react": "^6.2.1",
         "typescript": "^7.0.2",
         "vite": "^8.3.5",
+      },
+    },
+    "shared/types": {
+      "name": "@note-application/types",
+      "dependencies": {
+        "zod": "^4.6.7",
+      },
+      "devDependencies": {
+        "typescript": "^7.0.2",
       },
     },
   },
@@ -100,6 +111,8 @@
     "@note-application/backend": ["@note-application/backend@workspace:services/backend"],
 
     "@note-application/frontend": ["@note-application/frontend@workspace:services/frontend"],
+
+    "@note-application/types": ["@note-application/types@workspace:shared/types"],
 
     "@oxc-project/types": ["@oxc-project/types@0.156.0", "", {}, "sha512-1Duyg48TdJNdyhEB8Xn1L36bT9Pv6GUtlKjHxOys8xkaF/rQq3XJE+bAurSK/AgIz5mGFsb77cn9Pb20+WCScw=="],
 

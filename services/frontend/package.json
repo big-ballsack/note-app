@@ -9,6 +9,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@note-application/types": "workspace:*",
     "@t3-oss/env-core": "^0.13.11",
     "better-auth": "catalog:",
     "react": "^19.3.1",
