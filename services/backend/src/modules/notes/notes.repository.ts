@@ -30,3 +30,17 @@ export class PrismaNotesRepository implements NotesRepository {
     });
   }
 }
+
+export class InMemoryNotesRepository implements NotesRepository {
+  readonly notes: Note[] = [];
+
+  async findAllByAuthor(authorId: string): Promise<Note[]> {
+    return this.notes.filter((note) => note.authorId === authorId);
+  }
+
+  async create(authorId: string, note: NoteRequestDTO): Promise<Note> {
+    const created = { id: crypto.randomUUID(), title: note.title, content: note.content, authorId };
+    this.notes.push(created);
+    return created;
+  }
+}
