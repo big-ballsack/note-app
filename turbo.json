@@ -3,47 +3,23 @@
   "ui": "tui",
   "tasks": {
     "generate": {
-      "inputs": [
-        "prisma/**"
-      ],
-      "outputs": [
-        "src/generated/**"
-      ]
+      "inputs": ["prisma/**"],
+      "outputs": ["src/generated/**"]
     },
     "build": {
-      "dependsOn": [
-        "^build",
-        "generate"
-      ],
-      "outputs": [
-        "dist/**"
-      ],
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        ".env*"
-      ],
-      "env": [
-        "VITE_*"
-      ]
+      "dependsOn": ["^build", "generate"],
+      "outputs": ["dist/**"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "env": ["VITE_*"]
     },
     "typecheck": {
-      "dependsOn": [
-        "^typecheck",
-        "generate"
-      ]
+      "dependsOn": ["^typecheck", "generate"]
     },
     "dev": {
       "cache": false,
       "persistent": true,
-      "dependsOn": [
-        "generate"
-      ],
-      "passThroughEnv": [
-        "DATABASE_URL",
-        "PORT",
-        "BETTER_AUTH_SECRET",
-        "BETTER_AUTH_URL"
-      ]
+      "dependsOn": ["generate"],
+      "passThroughEnv": ["DATABASE_URL", "PORT", "BETTER_AUTH_SECRET", "BETTER_AUTH_URL"]
     }
   }
 }

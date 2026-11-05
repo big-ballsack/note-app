@@ -1,9 +1,8 @@
 # Note app
 
-
 > [!TIP]
 > **Getting started**
-> 
+>
 > ```sh
 > git clone https://github.com/big-ballsack/note-app # clone the project
 > cd note-app # move into it
